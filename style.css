@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Tema Claro (padrão) */
+:root {
+    --bg-gradient-start: #f0f2f5;
+    --bg-gradient-end: #ffffff;
+    --calculator-bg: #ffffff;
+    --input-bg: #f8f9fa;
+    --input-text: #333;
+    --number-btn-bg: #e9ecef;
+    --number-btn-text: #333;
+    --number-btn-hover: #dee2e6;
+    --operator-btn-bg: #ff9500;
+    --operator-btn-text: white;
+    --operator-btn-hover: #ffaa33;
+    --equal-btn-bg: #4cd964;
+    --equal-btn-hover: #67e07c;
+    --clear-btn-bg: #ff3b30;
+    --clear-btn-hover: #ff6661;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Tema Escuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-gradient-start: #1a1a1a;
+        --bg-gradient-end: #2d2d2d;
+        --calculator-bg: #333333;
+        --input-bg: #2d2d2d;
+        --input-text: #ffffff;
+        --number-btn-bg: #4d4d4d;
+        --number-btn-text: #ffffff;
+        --number-btn-hover: #666666;
+        --operator-btn-bg: #ff9500;
+        --operator-btn-text: white;
+        --operator-btn-hover: #ffaa33;
+        --equal-btn-bg: #4cd964;
+        --equal-btn-hover: #67e07c;
+        --clear-btn-bg: #ff3b30;
+        --clear-btn-hover: #ff6661;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+body {
+    background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.calculator {
+    background-color: var(--calculator-bg);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    width: 320px;
+    transition: all 0.3s ease;
+}
+
+.input {
+    background-color: var(--input-bg);
+    border-radius: 10px;
+    height: 60px;
+    padding: 10px 20px;
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: default;
+    color: var(--input-text);
+    transition: all 0.3s ease;
+}
+
+.buttons {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.operators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.operators div {
+    background-color: var(--operator-btn-bg);
+    color: var(--operator-btn-text);
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.numbers div {
+    background-color: var(--number-btn-bg);
+    color: var(--number-btn-text);
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.operators div {
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.numbers div:hover {
+    background-color: var(--number-btn-hover);
+}
+
+.operators div:hover {
+    background-color: var(--operator-btn-hover);
+}
+
+.numbers div:active, .operators div:active {
+    transform: scale(0.95);
+}
+
+#clear {
+    background-color: var(--clear-btn-bg);
+    color: white;
+}
+
+#clear:hover {
+    background-color: var(--clear-btn-hover);
+}
+
+.equal {
+    background-color: var(--equal-btn-bg);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.2s;
+}
+
+.equal:hover {
+    background-color: var(--equal-btn-hover);
+}
+
+.equal:active {
+    transform: scale(0.95);
+}
+
+/* Acessibilidade */
+div[tabindex="0"]:focus {
+    outline: 3px solid var(--operator-btn-bg);
+    outline-offset: -3px;
+}

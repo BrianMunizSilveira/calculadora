@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://imgs.search.brave.com/hal1PgQLBcgo3zcQQYtiz_ydmTsNkJXQp0CWmPklOc4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9qYXZhc2Ny/aXB0LWpzLWljb24t/NTEyeDUxMi1xM2ln/d2xuNi5wbmc" type="image/x-icon">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="input" id="input" tabindex="0" aria-label="Input"></div>
+        <div class="buttons">
+            <div class="operators">
+                <div tabindex="0" aria-label="Adicionar">+</div>
+                <div tabindex="0" aria-label="Subtrair">-</div>
+                <div tabindex="0" aria-label="Multiplicar">×</div>
+                <div tabindex="0" aria-label="Dividir">÷</div>
+            </div>
+            <div class="main-container">
+                <div class="numbers">
+                    <div tabindex="0" aria-label="Número 7">7</div>
+                    <div tabindex="0" aria-label="Número 8">8</div>
+                    <div tabindex="0" aria-label="Número 9">9</div>
+                </div>
+                <div class="numbers">
+                    <div tabindex="0" aria-label="Número 4">4</div>
+                    <div tabindex="0" aria-label="Número 5">5</div>
+                    <div tabindex="0" aria-label="Número 6">6</div>
+                </div>
+                <div class="numbers">
+                    <div tabindex="0" aria-label="Número 1">1</div>
+                    <div tabindex="0" aria-label="Número 2">2</div>
+                    <div tabindex="0" aria-label="Número 3">3</div>
+                </div>
+                <div class="numbers">
+                    <div tabindex="0" aria-label="Número 0">0</div>
+                    <div tabindex="0" aria-label="Ponto decimal">.</div>
+                    <div id="clear" tabindex="0" aria-label="Limpar">C</div>
+                </div>
+            </div>
+            <div class="equal" id="result" tabindex="0" aria-label="Resultado" onclick="Calcular()">=</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
